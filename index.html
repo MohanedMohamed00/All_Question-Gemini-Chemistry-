@@ -536,7 +536,7 @@
     font-size: 16px;
   }
 
-  .qcard.answered .opt {
+  .qcard.is-correct .opt {
     cursor: default;
   }
   .opt.selected {
@@ -553,6 +553,41 @@
     content: '✔';
     color: var(--cyan);
   }
+
+  .opt.correct {
+    background: rgba(16, 185, 129, 0.16);
+    border-color: var(--success);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.25);
+  }
+  .opt.correct .lab {
+    background: var(--success);
+    color: #051a12;
+    border-color: var(--success);
+  }
+  .opt.correct .mark::after {
+    content: '✔';
+    color: var(--success);
+  }
+  .opt.wrong {
+    background: rgba(239, 68, 68, 0.16);
+    border-color: var(--danger);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.22);
+  }
+  .opt.wrong .lab {
+    background: var(--danger);
+    color: #2a0606;
+    border-color: var(--danger);
+  }
+  .opt.wrong .mark::after {
+    content: '✘';
+    color: var(--danger);
+  }
+  .qcard.is-correct { border-right-color: var(--success); }
+  .qcard.is-wrong { border-right-color: var(--danger); }
+  .feedback.ok { color: var(--success); }
+  .feedback.bad { color: var(--danger); }
 
   .feedback {
     margin-top: 14px;
@@ -868,7 +903,7 @@
       </div>
       <div class="qcard" data-correct="0">
         <div class="qhead"><span class="qnum">12</span><span class="qtext">كمية النحاس المترسب بالجرام عند مرور تيار كهربي شدته<span dir="ltr" class="ltr"> 3A</span> لمدة<span dir="ltr" class="ltr"> 16</span> ساعة في محلول<span dir="ltr" class="ltr"> CuCl₂</span> علماً بأن الوزن الذري للنحاس<span dir="ltr" class="ltr"> = 63.5:</span></span></div>
-        <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">[96500] / [(2)(63.5)(3)(3600)(16)]</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">[(2)(96500)] / [(63.5)(3)(3600)(16)]</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">[96500] / [(63.5)(3)(3600)(16)]</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">(63.5) / [(2)(96500)(3)(60)(16)]</span></span><span class="mark" aria-hidden="true"></span></button></div>
+        <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">[(63.5)(3)(3600)(16)] / [(2)(96500)]</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">[(2)(96500)] / [(63.5)(3)(3600)(16)]</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">[96500] / [(63.5)(3)(3600)(16)]</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">(63.5) / [(2)(96500)(3)(60)(16)]</span></span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
       <div class="qcard" data-correct="1">
@@ -922,7 +957,7 @@
         <div class="feedback" aria-live="polite"></div>
       </div>
       <div class="qcard" data-correct="2">
-        <div class="qhead"><span class="qnum">23</span><span class="qtext">النسبة المئوية لوزن النحاس في الخام (مسألة تركيز<span dir="ltr" class="ltr"> 4.62</span> ميكروجرام/لتر):</span></div>
+        <div class="qhead"><span class="qnum">23</span><span class="qtext">النسبة المئوية لوزن النحاس في الخام (مسألة تركيز<span dir="ltr" class="ltr"> 4.62</span> ميكروجرام/لتر): <span style="color:#e5b352;font-size:.85em">⚠ بيانات السؤال ناقصة — راجع ورقة الامتحان الأصلية</span></span></div>
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">11.55%</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">0.231%</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">23.1%</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">2.88%</span></span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
@@ -937,7 +972,7 @@
         <div class="feedback" aria-live="polite"></div>
       </div>
       <div class="qcard" data-correct="2">
-        <div class="qhead"><span class="qnum">26</span><span class="qtext">تركيز المحلول النهائي عند خلط<span dir="ltr" class="ltr"> 380</span> ملي<span dir="ltr" class="ltr"> (0.620M)</span> مع<span dir="ltr" class="ltr"> 1</span> ملي<span dir="ltr" class="ltr"> (0.65M):</span></span></div>
+        <div class="qhead"><span class="qnum">26</span><span class="qtext">تركيز المحلول النهائي عند خلط<span dir="ltr" class="ltr"> 380</span> ملي<span dir="ltr" class="ltr"> (0.620M)</span> مع<span dir="ltr" class="ltr"> 1</span> ملي<span dir="ltr" class="ltr"> (0.65M):</span> <span style="color:#e5b352;font-size:.85em">⚠ بيانات السؤال ناقصة — راجع ورقة الامتحان الأصلية</span></span></div>
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">0.65 M</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">0.825 M</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">0.783 M</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">1.65 M</span></span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
@@ -991,7 +1026,7 @@
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">[P_NH₃]² / [P_N₂][P_H₂]³</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">P_N₂ · P_H₂ / P_NH₃</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">P_N₂ · [P_H₂]³ / [P_NH₃]²</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">P_NH₃ / P_N₂ · P_H₂</span></span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
-      <div class="qcard" data-correct="1">
+      <div class="qcard" data-correct="3">
         <div class="qhead"><span class="qnum">37</span><span class="qtext">جهد اختزال الماغنيسيوم في خلية<span dir="ltr" class="ltr"> EMF</span> لها<span dir="ltr" class="ltr"> 2.7V</span> والنحاس<span dir="ltr" class="ltr"> 0.34V</span> هو:</span></div>
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">2.36</span> فولت</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">3.04</span> فولت</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">3.04-</span> فولت</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">2.36-</span> فولت</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
@@ -1192,7 +1227,7 @@
         <div class="feedback" aria-live="polite"></div>
       </div>
       <div class="qcard" data-correct="1">
-        <div class="qhead"><span class="qnum">25</span><span class="qtext">أي من المعادن التالية تجعل الإلكترونات تبتعد عن قطب النحاس (أكسدة النحاس<span dir="ltr" class="ltr"> 0.34V):</span></span></div>
+        <div class="qhead"><span class="qnum">25</span><span class="qtext">أي من المعادن التالية تجعل الإلكترونات تتحرك تجاه قطب النحاس (أكسدة النحاس<span dir="ltr" class="ltr"> 0.34V):</span></span></div>
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">نحاس</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">ألمنيوم (أكسدته<span dir="ltr" class="ltr"> 1.67V)</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">نيكل</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">ذهب</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
@@ -1523,7 +1558,7 @@
       </div>
       <div class="qcard" data-correct="2">
         <div class="qhead"><span class="qnum">39</span><span class="qtext">يمكن تعريف<span dir="ltr" class="ltr"> C₂H₂</span> بجميع العبارات الآتية ما عدا:</span></div>
-        <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">إيثين</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">ألكاين</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">إيثانول</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">أسيتيلين</span><span class="mark" aria-hidden="true"></span></button></div>
+        <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">إيثاين</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">ألكاين</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">إيثانول</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">أسيتيلين</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
       <div class="qcard" data-correct="2">
@@ -1596,9 +1631,9 @@
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">تسخين الهكسان باستخدام عامل مساعد</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">التقطير الجاف لملح بنزوات الصوديوم مع الجير الصودي</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">إمرار الإيثان في أنبوبة من النيكل مسخنة لدرجة الاحمرار</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">اختزال الفينول في وجود الهيدروجين</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
-      <div class="qcard" data-correct="1">
+      <div class="qcard" data-correct="2">
         <div class="qhead"><span class="qnum">2</span><span class="qtext">إذا علمت أن الصيغة الجزيئية للكحول الإيثيلي هي<span dir="ltr" class="ltr"> (C₂H₆O)</span> فإن الصيغة البنائية له هي:</span></div>
-        <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">CH₃OCH₃</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">C₂H₅OH</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">CH₃CH₂OH</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">CH₃OCH₃</span></span><span class="mark" aria-hidden="true"></span></button></div>
+        <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">CH₃OCH₃</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">CH₃–O–CH₂–CH₃</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">CH₃CH₂OH</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">CH₃–CH₂–CH₂–OH</span></span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
       <div class="qcard" data-correct="1">
@@ -1722,21 +1757,21 @@
         <div class="feedback" aria-live="polite"></div>
       </div>
       <div class="qcard" data-correct="1">
-        <div class="qhead"><span class="qnum">27</span><span class="qtext">تم إذابة<span dir="ltr" class="ltr"> 120</span> جم من اليوريا (الوزن الجزيئي<span dir="ltr" class="ltr"> = 60)</span> في<span dir="ltr" class="ltr"> 1000</span> جم ماء، فما هو تركيز هذا المحلول؟:</span></div>
+        <div class="qhead"><span class="qnum">27</span><span class="qtext">تم إذابة<span dir="ltr" class="ltr"> 120</span> جم من اليوريا (الوزن الجزيئي<span dir="ltr" class="ltr"> = 60)</span> في<span dir="ltr" class="ltr"> 1000</span> جم ماء، فما هو تركيز هذا المحلول؟: <span style="color:#e5b352;font-size:.85em">⚠ بيانات السؤال ناقصة — راجع ورقة الامتحان الأصلية</span></span></div>
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">2.22M</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">2.05M</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">2M</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">1.78M</span></span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
-      <div class="qcard" data-correct="2">
+      <div class="qcard" data-correct="1">
         <div class="qhead"><span class="qnum">28</span><span class="qtext">الفرق بين الخلية الجلفانية والخلية الإلكترونية أن في الأخيرة:</span></div>
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">ينتج تيار كهربائي نتيجة تفاعل كيميائي</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">يحدث تفاعل غير تلقائي</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">يحدث تفاعل الأكسدة عند الكاثود</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">تتجه الإلكترونات إلى الأنود</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
-      <div class="qcard" data-correct="3">
+      <div class="qcard" data-correct="1">
         <div class="qhead"><span class="qnum">29</span><span class="qtext">الهيدرة الحفزية هي:</span></div>
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">إضافة حمض مخفف كعامل مساعد لتكوين كحول</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">إضافة الماء لمركب عضوي لتكوين كحول</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">إذابة المركب العضوي في الماء</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">اتحاد المركب العضوي مع الماء</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
-      <div class="qcard" data-correct="0">
+      <div class="qcard" data-correct="3">
         <div class="qhead"><span class="qnum">30</span><span class="qtext">الأسيتالدهيد اسم شائع لمركب:</span></div>
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">الإيثين</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">الإيثاين</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">الإيثانول</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">الإيثانال</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
@@ -1858,7 +1893,7 @@
       </div>
       <div class="qcard" data-correct="1">
         <div class="qhead"><span class="qnum">2</span><span class="qtext">من الخواص الفيزيائية للكحولات:</span></div>
-        <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">لا تذوب في الماء</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">المركبات الأولى والمتوسطة سوائل زيتية القوام</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">درجة غليانها منخفضة</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">مواد عديمة اللون</span><span class="mark" aria-hidden="true"></span></button></div>
+        <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">لا تذوب في الماء</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">المركبات المتوسطة منها سوائل زيتية القوام</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">درجة غليانها منخفضة</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">لا تتكون روابط هيدروجينية بين جزيئاتها</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
       <div class="qcard" data-correct="0">
@@ -1878,7 +1913,7 @@
       </div>
       <div class="qcard" data-correct="3">
         <div class="qhead"><span class="qnum">6</span><span class="qtext">أهم عامل يساعد على زيادة قيمة ثابت الاتزان للمعادلة:<span dir="ltr" class="ltr"> 2CO(g) + O₂(g) ⇌ 2CO₂(g) + 566 KJ:</span></span></div>
-        <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">زيادة<span dir="ltr" class="ltr"> [CO]</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">زيادة<span dir="ltr" class="ltr"> [CO₂]</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">زيادة<span dir="ltr" class="ltr"> [O₂]</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">زيادة درجة الحرارة</span><span class="mark" aria-hidden="true"></span></button></div>
+        <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">زيادة<span dir="ltr" class="ltr"> [CO]</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">زيادة<span dir="ltr" class="ltr"> [CO₂]</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">زيادة<span dir="ltr" class="ltr"> [O₂]</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">خفض درجة الحرارة</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
       <div class="qcard" data-correct="3">
@@ -2098,7 +2133,7 @@
       </div>
       <div class="qcard" data-correct="2">
         <div class="qhead"><span class="qnum">50</span><span class="qtext">النسبة المئوية لماء التبلور في ملح متهدرت كتلته<span dir="ltr" class="ltr"> 0.3584g</span> وأصبحت ثابتة عند<span dir="ltr" class="ltr"> 0.3015g</span> هي:</span></div>
-        <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">17.68%</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">85%</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">15.02%</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">5.33%</span></span><span class="mark" aria-hidden="true"></span></button></div>
+        <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">17.68%</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">85%</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">15.88%</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">5.33%</span></span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div></div>
     </section>
@@ -2211,13 +2246,13 @@
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">الألومنيوم</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">الحديد<span dir="ltr" class="ltr"> (III)</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">الكالسيوم</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">الأمونيوم</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
-      <div class="qcard" data-correct="0">
+      <div class="qcard" data-correct="1">
         <div class="qhead"><span class="qnum">21</span><span class="qtext">تحضير الإيثاين في الصناعة:</span></div>
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">بإذابة كربيد الكالسيوم في الماء</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">بتسخين الغاز الطبيعي لدرجة 1400°م ثم التبريد السريع</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">بحرق الفحم مع الغاز الطبيعي</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">بتسخين الكربون مع الهيدروجين إلى درجة 1500°م</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
       <div class="qcard" data-correct="2">
-        <div class="qhead"><span class="qnum">22</span><span class="qtext">تركيز أيونات الكلور في محلول<span dir="ltr" class="ltr"> PbCl₂:</span></span></div>
+        <div class="qhead"><span class="qnum">22</span><span class="qtext">تركيز أيونات الكلور في محلول<span dir="ltr" class="ltr"> PbCl₂:</span> <span style="color:#e5b352;font-size:.85em">⚠ بيانات السؤال ناقصة — راجع ورقة الامتحان الأصلية</span></span></div>
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">0.004</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">0.025</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">0.05</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">0.031</span></span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
@@ -2247,7 +2282,7 @@
         <div class="feedback" aria-live="polite"></div>
       </div>
       <div class="qcard" data-correct="2">
-        <div class="qhead"><span class="qnum">28</span><span class="qtext">تركيز حمض<span dir="ltr" class="ltr"> HCl</span> المستخدم في المعايرة:</span></div>
+        <div class="qhead"><span class="qnum">28</span><span class="qtext">تركيز حمض<span dir="ltr" class="ltr"> HCl</span> المستخدم في المعايرة: <span style="color:#e5b352;font-size:.85em">⚠ بيانات السؤال ناقصة — راجع ورقة الامتحان الأصلية</span></span></div>
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">0.0955</span> مول/لتر</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">0.143</span> مول/لتر</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">0.571</span> مول/لتر</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">0.196</span> مول/لتر</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
@@ -2293,7 +2328,7 @@
       </div>
       <div class="qcard" data-correct="2">
         <div class="qhead"><span class="qnum">37</span><span class="qtext">قيمة<span dir="ltr" class="ltr"> Kw</span> في محلول حمضي عند<span dir="ltr" class="ltr"> 298K:</span></span></div>
-        <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">1</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">10</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">&gt; 10⁻¹⁴</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">&lt; 10⁻¹⁴</span></span><span class="mark" aria-hidden="true"></span></button></div>
+        <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">1</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">10</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">1 × 10⁻¹⁴</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">&lt; 10⁻¹⁴</span></span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
       <div class="qcard" data-correct="1">
@@ -2301,7 +2336,7 @@
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">C₆H₅Cl</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">C₆H₆Cl₆</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">C₆H₆CH₃</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">C₆H₃CH₃</span></span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
-      <div class="qcard" data-correct="1">
+      <div class="qcard" data-correct="0">
         <div class="qhead"><span class="qnum">39</span><span class="qtext">أعداد تأكسد عناصر السلسلة الانتقالية الأولى:</span></div>
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">+1 : +7</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">+2 : +8</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">+3 : +7</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">+1 : +6</span></span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
@@ -2322,16 +2357,16 @@
         <div class="feedback" aria-live="polite"></div>
       </div>
       <div class="qcard" data-correct="1">
-        <div class="qhead"><span class="qnum">43</span><span class="qtext">كمية الكهرباء المارة:</span></div>
+        <div class="qhead"><span class="qnum">43</span><span class="qtext">كمية الكهرباء المارة: <span style="color:#e5b352;font-size:.85em">⚠ بيانات السؤال ناقصة — راجع ورقة الامتحان الأصلية</span></span></div>
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">2.04 × 10²</span> كولوم</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">1.32 × 10⁻¹⁴</span> كولوم</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">1.22 × 10⁴</span> كولوم</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">3.4</span> كولوم</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
       <div class="qcard" data-correct="0">
         <div class="qhead"><span class="qnum">44</span><span class="qtext">تصلح جميع الطرق لتحضير البنزين ما عدا:</span></div>
-        <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">إمرار الإيثاين<span dir="ltr" class="ltr"> C₂H₂</span> في أنبوبة من النيكل مسخنة لدرجة الاحمرار</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">تسخين الهكسان باستخدام عامل مساعد</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">اختزال الفينول في وجود الهيدروجين</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">بالتقطير الجاف لملح بنزوات الصوديوم مع الجير الصودي</span><span class="mark" aria-hidden="true"></span></button></div>
+        <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">إمرار الإيثان<span dir="ltr" class="ltr"> C₂H₆</span> في أنبوبة من النيكل مسخنة لدرجة الاحمرار</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">تسخين الهكسان باستخدام عامل مساعد</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">اختزال الفينول في وجود الهيدروجين</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">بالتقطير الجاف لملح بنزوات الصوديوم مع الجير الصودي</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
-      <div class="qcard" data-correct="1">
+      <div class="qcard" data-correct="0">
         <div class="qhead"><span class="qnum">45</span><span class="qtext">البلمرة بالتكاثف:</span></div>
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">عند اتحاد مونومرين مع فقد جزيء ماء</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">عند تبريد مونومر</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">عند ضغط مونومرين عند درجة حرارة منخفضة</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">عند تبريد بوليمر</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
@@ -2346,7 +2381,7 @@
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">الرصاص</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">الحديد</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">التيتانيوم</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">النيكل</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
-      <div class="qcard" data-correct="0">
+      <div class="qcard" data-correct="1">
         <div class="qhead"><span class="qnum">48</span><span class="qtext">المجموعة الوظيفية في الكيتونات:</span></div>
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">هيدروكسيل</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">كربونيل</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">كربوكسيل</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">أمين</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
@@ -2356,7 +2391,7 @@
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">CH₃I</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">NaHCO₃</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">CH₂=CHCH₃</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">CH₃CN</span></span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
-      <div class="qcard" data-correct="0">
+      <div class="qcard" data-correct="2">
         <div class="qhead"><span class="qnum">50</span><span class="qtext">يمكن الحصول على ميثانوات الفينيل من:</span></div>
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval">حمض البنزويك والميثانويك</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval">حمض الفورميك وحمض البكريك</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval">حمض الفورميك وحمض الكربوليك</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval">حمض البنزويك والإيثانويك</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
@@ -2591,7 +2626,7 @@
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">33</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">37</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">34</span></span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">43</span></span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
       </div>
-      <div class="qcard" data-correct="1">
+      <div class="qcard" data-correct="3">
         <div class="qhead"><span class="qnum">45</span><span class="qtext">إذا كانت<span dir="ltr" class="ltr"> E⁰</span> لنصف الخلية<span dir="ltr" class="ltr"> A + e⁻ → A⁻</span> قيمة سالبة كبيرة فما الذي يمكن استنتاجه؟</span></div>
         <div class="options"><button type="button" class="opt" data-idx="0"><span class="lab">أ-</span><span class="optval"><span dir="ltr" class="ltr">A</span> يسهل اختزاله</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="1"><span class="lab">ب-</span><span class="optval"><span dir="ltr" class="ltr">A</span> يسهل أكسدته</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="2"><span class="lab">ج-</span><span class="optval"><span dir="ltr" class="ltr">A⁻</span> يسهل اختزاله</span><span class="mark" aria-hidden="true"></span></button><button type="button" class="opt" data-idx="3"><span class="lab">د-</span><span class="optval"><span dir="ltr" class="ltr">A⁻</span> يسهل أكسدته</span><span class="mark" aria-hidden="true"></span></button></div>
         <div class="feedback" aria-live="polite"></div>
@@ -2684,9 +2719,10 @@
     const slug = section.dataset.slug;
     const total = section.querySelectorAll('.qcard').length;
     const answeredCount = section.querySelectorAll('.qcard.answered').length;
+    const rightCount = section.querySelectorAll('.qcard.is-correct').length;
     const scoreEl = document.querySelector(`.score[data-score-for="${slug}"]`);
     if (scoreEl) {
-      scoreEl.textContent = `${answeredCount} / ${total} اتجاوب`;
+      scoreEl.textContent = `${rightCount} / ${total} صح (تم حل ${answeredCount})`;
     }
     const progressBar = section.querySelector('.year-progress > span');
     if (progressBar) {
@@ -2694,18 +2730,39 @@
     }
   }
 
+  const LABELS = ['أ', 'ب', 'ج', 'د'];
+
   document.querySelectorAll('.qcard').forEach(card => {
     const feedback = card.querySelector('.feedback');
     const opts = Array.from(card.querySelectorAll('.opt'));
+    const correctIdx = parseInt(card.dataset.correct, 10);
 
     opts.forEach(btn => {
       btn.addEventListener('click', () => {
-        opts.forEach(o => o.classList.remove('selected'));
-        btn.classList.add('selected');
-        card.classList.add('answered');
+        // لو الكارت خلص بإجابة صحيحة، يقفل. غير كده يسمح بإعادة المحاولة.
+        if (card.classList.contains('is-correct')) return;
 
-        feedback.textContent = pick(CHOSEN_PHRASES);
-        feedback.className = 'feedback';
+        const chosen = parseInt(btn.dataset.idx, 10);
+        const isRight = chosen === correctIdx;
+        const rightBtn = opts[correctIdx];
+
+        // تنظيف تلوين المحاولة السابقة
+        opts.forEach(o => o.classList.remove('selected', 'correct', 'wrong'));
+        card.classList.remove('is-correct', 'is-wrong');
+
+        card.classList.add('answered');
+        card.classList.add(isRight ? 'is-correct' : 'is-wrong');
+        btn.classList.add('selected', isRight ? 'correct' : 'wrong');
+        if (!isRight && rightBtn) rightBtn.classList.add('correct');
+
+        if (isRight) {
+          feedback.textContent = pick(CHOSEN_PHRASES);
+          feedback.className = 'feedback ok';
+        } else {
+          const rightText = rightBtn ? rightBtn.querySelector('.optval').textContent.trim() : '';
+          feedback.textContent = 'إجابة خاطئة ✘ — جرّب تاني (الإجابة الصحيحة: (' + LABELS[correctIdx] + ') ' + rightText + ')';
+          feedback.className = 'feedback bad';
+        }
 
         updateScore(card.closest('.year-section'));
       });
@@ -2717,8 +2774,8 @@
       const section = document.getElementById(btn.dataset.resetFor);
       if (!section) return;
       section.querySelectorAll('.qcard').forEach(card => {
-        card.classList.remove('answered', 'unknown', 'celebrate');
-        card.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+        card.classList.remove('answered', 'unknown', 'celebrate', 'is-correct', 'is-wrong');
+        card.querySelectorAll('.opt').forEach(o => o.classList.remove('selected', 'correct', 'wrong'));
         const fb = card.querySelector('.feedback');
         if (fb) {
           fb.textContent = '';
